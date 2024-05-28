@@ -1,0 +1,20 @@
+<h2 class="bg-primary text-white text-center p-2">TABS</h2>
+
+<ul class="nav nav-pills mb-2">
+    <li class="nav-item" *ngFor="let skill of skillsArr">
+        <a href="javascript:;" class="nav-link"
+        (click)="selectedFrameWork=skill.name; info=skill.info"
+        [ngClass]="{
+            'active':selectedFrameWork===skill.name
+        }"
+        
+        >{{skill.name}}</a>
+    </li>
+</ul>
+
+<div class="card" *ngIf="selectedFrameWork">
+    <div class="card-body">
+        <Strong>{{selectedFrameWork}}</Strong>
+        <p>{{info}}</p>
+        </div>
+</div> 
